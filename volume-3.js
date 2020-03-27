@@ -12,7 +12,7 @@ google.charts.setOnLoadCallback(drawChart);
         var options = {
           chart: {
             title: 'Company Performance',
-            subtitle: 'Planned Annual Production of the Copper: 2020-2022',
+            subtitle: 'Planned Annual Production of the Copper: 2020-2022 (ton)',
           }
         };
 
