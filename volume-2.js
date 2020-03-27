@@ -12,7 +12,7 @@ google.charts.setOnLoadCallback(drawChart);
         var options = {
           chart: {
             title: 'Company Performance',
-            subtitle: 'Planned Annual Production of the Silver: 2020-2022 (Oz)',
+            subtitle: 'Planned Annual Production of the Silver: 2020-2022, (Oz)',
           }
         };
 
