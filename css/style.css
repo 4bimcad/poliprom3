@@ -97,7 +97,8 @@ h1, h2, h3, h4, h5, h6, figure {
     font-weight: 600; }
     .colorlib-nav #colorlib-logo a {
       position: relative;
-      color: #fff; }
+      font-size: 32px;
+      color: #E8BB03; }
   @media screen and (max-width: 768px) {
     .colorlib-nav .menu-1 {
       display: none; } }
