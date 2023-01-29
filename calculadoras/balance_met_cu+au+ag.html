@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <meta name="description" content="Calculo de Metales, Balance Metalurgico, Valorizacion de Mineral">
+  <meta name="keywords" content="balance metalurgico online, balance metalurgico calcular">
+  <meta name="author" content="Autores: Stanislav Tsvitkov, Vadym Grechuk.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="copyright" content="POLIPROM SAC" />
+	<title>Valorización de Mineral (Cu, Au, Ag) - POLIPROM SAC</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="balance_cu_3.js"></script>
+<!--   <script src="balance_cu_3.js"></script>  -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- 
+//ES
+// PROPIEDAD INTELECTUAL DE POLIPROM SAC
+// COPIAR O USAR PARTE DE CODICO SIN PERMISO DE ADMINISTRACION DE PoliMETAL.CLUB PROHIBIDO!!!!
+// TODOS DERECHOS RESERVADOS
+
+//EN
+// INTELLECTUAL PROPERTY OF POLIPROM SAC
+// COPY OR USE PART OF CODE WITHOUT PERMISSION OF ADMINISTRATION OF PoliMETAL.CLUB PROHIBITED !!!!
+// ALL RIGHTS RESERVED 
+-->  
+
+
+<!-- Just an image NAV BAR -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+  Poliprom SAC
+  </a>
+</nav>
+<br>
+
+<!-- HEADER START-->
+<h1 style="text-align: center;">CALCULO DE VALORIZACIÓN DE MINERAL</h1>
+<h3 style="text-align: center;">COBRE, ORO, PLATA (Cu, Au, Ag)</h3>
+<hr>
+<!-- HEADER END-->
+
+<!-- COMPANY START -->
+<div class="card">
+  <div class="card-header">
+    <h5 style="text-align: center;">DATOS LEGALES</h5> 
+  </div>
+  <br>
+  <!--Table-->
+<table id="table_datos_legales_cu" class="table table-borderless">
+  <!--Table body-->
+  <tbody>
+    <tr class="text-center">
+      <td >
+        <div class="input-group mb-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text">RAZÓN SOCIAL &nbsp; &nbsp;</span>
+          </div>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Opcional">
+        </div>
+      </td>
+      <td >
+        <div class="input-group mb-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text">CONCESIÓN MINERA</span>
+          </div>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Opcional">
+        </div>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>
+        <div class="input-group mb-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text">NÚMERO DE RUC&nbsp;</span>
+          </div>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Opcional">
+          </div>
+      </td>
+      <td >
+        <div class="input-group mb-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text">CÓDIGO ÚNICO &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          </div>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Opcional">
+        </div>
+      </td>    
+    </tr>
+    <tr class="text-center">
+      <td>
+        <div class="input-group mb-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text">NÚMERO DE LOTE</span>
+          </div>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Opcional">
+          </div>
+      </td>
+      <td>
+        <div class="input-group mb-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text">FECHA&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          </div>
+            <input type="date" class="form-control" data-toggle="tooltip" data-placement="top" title="Opcional">&nbsp;
+        </div>
+      </td>    
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+</div>
+<!-- COMPANY END -->
+
+<br>
+ <!--MINERAL-->
+<div class="card">
+  <div class="card-header">
+    <h5 style="text-align: center;">MINERAL</h5> 
+  </div>
+<div class='table-responsive'>
+ <!--Table-->
+ <table id="table_Mineral" class="table table-hover table-bordered">
+   <!--Table body-->
+   <tbody>
+     <tr >
+       <td class="align-middle font-weight-bold">PESO HUMEDO BRUTO (TMH)</td>
+       <td class="align-middle" colspan="2" >
+        <div class="input-group w-50" data-toggle="tooltip" data-placement="top" title="Peso de Mineral Bruto">
+          <input class="form-control w-50 font-weight-bold" type="number" id="TMH" value="0" oninput="balance()" min="0">
+          <div class="input-group-append">
+            <span class="input-group-text font-weight-bold" id="">TM</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">AGUA (H2O)</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50" data-toggle="tooltip" data-placement="top" title="Agua en Mineral">
+          <input class="form-control w-50" type="number" id="agua" value="5" oninput="balance()">
+          <div class="input-group-append">
+            <span class="input-group-text"  type="number">&nbsp;%</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PESO DE AGUA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="agua_peso" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PESO SECO BRUTO</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50 ">
+            <span id="TMS_bruto" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+     <tr>
+       <td class="align-middle">MERMA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50"  data-toggle="tooltip" data-placement="top" title="Pérdidas en la Descarga">
+          <input class="form-control w-50" type="number" id="merma" type="number" value="0.5"  oninput="balance()">
+          <div class="input-group-append">
+            <span class="input-group-text" >&nbsp;%</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PESO DE MERMA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="merma_peso" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle font-weight-bold">PESO SECO NETO (TMNS)</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="TMS" type="number" class="font-weight-bold">0</span>&nbsp;<b>TM</b>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+   <!--Table body-->
+ </table>
+ <!--Table-->
+</div>
+<!--WATERMARK-->
+<div class="text-right small" id="watermark_3">
+  <a href="#" target="_blank"> POLIPROM SAC</a> © Todos los Derechos Reservados
+</div>
+</div>
+ <!--MINERAL END-->
+
+
+
+<!-- EXPLORACION + FABRICA + TRANSPORTE START -->
+<div class="card">
+  <div class="card-header">
+    <h5 style="text-align: center;">EXPLORACIÓN, SERVICIOS DE FÁBRICA Y TRANSPORTE</h5> 
+  </div>
+<div class="table-responsive">
+ <!--Table EXPLORACIÓN-->
+ <table id="" class="table table-hover table-bordered">
+   <!--Table body-->
+   <tbody>
+    <tr>
+      <th colspan="3" class="text-center table-active">EXPLORACIÓN</th>
+    </tr>
+     <tr>
+       <td class="align-middle">PRECIO POR 1TM</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50" data-toggle="tooltip" data-placement="top" title="Valor de Gastos de Exploración de Mineral Bruto">
+          <input class="form-control w-50" type="number" id="exploracion_1tm" type="number" value="0" oninput="balance()" min="0">
+          <div class="input-group-append">
+            <span class="input-group-text" id="">$</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">TOTAL PESO HUMEDO BRUTO (TMH)</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="exploracion_TMH" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle font-weight-bold">TOTAL EXPLORACIÓN</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="total_exploracion" type="number" class="font-weight-bold">0</span>
+        </div>
+      </td>
+    </tr> 
+    <!--Table INCOTERM DAP 1 START-->
+      <tr class="text-center">
+        <th colspan="3" class="text-center table-active" data-toggle="tooltip" data-placement="top" title="Transporte de Mineral a Fábrica">INCOTERM DAP 1          
+        </th>
+      </tr>
+      <tr>
+       <td class="align-middle">DESTINO, DISTANCIA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+         <input class="form-control" id="transporte_1" type="text" oninput="transporte()" placeholder="" data-toggle="tooltip" data-placement="top" title="Opcional">
+          <div class="input-group-append">
+          </div>
+        </div>
+      </td>
+    </tr>
+      <tr>
+       <td class="align-middle">PRECIO POR 1TM</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50" data-toggle="tooltip" data-placement="top" title="Valor de Gastos por Transporte de Mineral Bruto">
+          <input class="form-control w-50" type="number" id="transporte_1tm" type="number" value="0" oninput="balance()" min="0">
+          <div class="input-group-append">
+            <span class="input-group-text" id="">$</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">TOTAL PESO HUMEDO BRUTO (TMH)</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="transporte_TMH" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle font-weight-bold">TOTAL INCOTERM DAP 1</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="total_transporte" type="number" class="font-weight-bold">0</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="3" class="text-center table-active">SERVICIOS DE FÁBRICA</th>
+    </tr>
+    <!--Table SERVICIOS DE FÁBRICA START-->
+     <tr>
+       <td class="align-middle">PRECIO POR 1TM</td>
+       <td class="align-middle" colspan="2" >
+        <div class="input-group w-50" data-toggle="tooltip" data-placement="top" title="Valor de Gastos por Servicios de Fábrica">
+          <input class="form-control w-50" type="number" id="fabrica_1tm" type="number" value="0" oninput="balance()" min="0">
+          <div class="input-group-append">
+            <span class="input-group-text" id="">$</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">TOTAL PESO HUMEDO BRUTO (TMH)</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="fabrica_TMH" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle font-weight-bold">TOTAL SERVICIOS DE FÁBRICA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="total_fabrica" type="number" class="font-weight-bold">0</span>
+        </div>
+      </td>
+    </tr> 
+      
+    <!--INCOTERM 2 START-->
+    <tr class="text-center">
+      <th colspan="3" class="text-center table-active">INCOTERM DAP 2
+      </th>
+    </tr>
+    <tr>
+       <td class="align-middle">DESTINO, DISTANCIA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+         <input class="form-control" id="transporte_2" type="text" oninput="transporte()" placeholder="" data-toggle="tooltip" data-placement="top" title="Opcional">
+          <div class="input-group-append">
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PRECIO POR 1TM</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50" data-toggle="tooltip" data-placement="top" title="Valor de Gastos por Transporte de Concentrado">
+          <input class="form-control w-50" type="number" id="transporte_1tm_2" type="number" value="0" oninput="balance()" min="0">
+          <div class="input-group-append">
+            <span class="input-group-text" id="">$</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PESO DE CONCENTRADO</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="transporte_TMS_2" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">AGUA (H2O)</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50"  data-toggle="tooltip" data-placement="top" title="Agua en Concentrado">
+          <input class="form-control w-50" type="number" id="porc_de_agua_2" type="number" value="0" oninput="balance()" min="0">
+          <div class="input-group-append">
+            <span class="input-group-text" id="">&nbsp;%</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PESO DE AGUA</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="humedad_de_agua_2" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle">PESO TOTAL</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="suma_agua2" type="number">0</span>&nbsp;TM
+        </div>
+      </td>
+    </tr>
+    <tr>
+       <td class="align-middle font-weight-bold">TOTAL INCOTERM DAP 2</td>
+       <td class="align-middle" colspan="2">
+        <div class="input-group w-50">
+            <span id="total_transporte_2" type="number" class="font-weight-bold">0</span>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+   <!--Table body-->
+ </table>
+ <!--Table-->
+</div> <!-- TABLE RESPONSIVE END -->
+</div> <!-- CARD END -->
+<!-- EXPLORACION + FABRICA + TRANSPORTE START END -->
+
+
+
+
+<!-- BALANCE METALURGICO START -->
+<div class="card">
+  <div class="card-header">
+    <h5 style="text-align: center;">BALANCE METALÚRGICO</h5> 
+  </div>
+
+  <!--Table-->
+<div class="table-responsive">
+<table id="table_balance_Cu" class="table table-sm table-hover table-bordered">
+<!--Table head-->
+  <thead class="thead-light align-middle" style="text-align: center;">
+    <tr class="align-middle" style="text-align: center;">
+      <th rowspan="2" class="align-middle" style="text-align: center;">PRODUCTOS</th>
+      <th rowspan="2" class="align-middle" style="text-align: center;">PESO, TM</th>
+      <th rowspan="2" class="align-middle" style="text-align: center;">PESO, %</th>
+      <th colspan="3" data-toggle="tooltip" data-placement="top" title="Complete todos los campos Vacíos y seleccione Medida de Peso.">ENSAYES</th>
+      <th colspan="3">CONTENIDO METÁLICO</th>
+      <th colspan="3">RECUPERACIÓN, %</th>
+      <th rowspan="2" class="align-middle" style="text-align: center;">RATIO</th>
+    </tr>
+    <tr class="align-middle" style="text-align: center;">
+      <th class="align-middle" style="text-align: center; width:120px;">Cu, &nbsp;%
+      </th>
+      <th>Au,
+        <select name="Au_select" id="Au_select" class="custom-select custom-select-sm" style="width:79.5px;" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Medidas de Peso">
+          <option value="4" selected disabled>Selec.</option> 
+          <option value="1">Oz/TC</option> 
+          <option value="2">Oz/TM</option>
+          <option value="3">g/TM</option>
+      </select>
+      </th>
+      <th>Ag,
+        <select name="Ag_select" id="Ag_select" class="custom-select custom-select-sm" style="width:79.5px;" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Medidas de Peso">
+          <option value="4" selected disabled>Selec.</option>
+          <option value="1">Oz/TC</option> 
+          <option value="2">Oz/TM</option>
+          <option value="3">g/TM</option>
+        </select>
+      </th>
+      <th class="align-middle" style="text-align: center;">Cu, TM</th>
+      <th class="align-middle" style="text-align: center;">Au, <span id="Au_select_cont_met"></span></th>
+      <th class="align-middle" style="text-align: center;">Ag, <span id="Ag_select_cont_met"></span></th>
+      <th class="align-middle" style="text-align: center;">Cu</th>
+      <th class="align-middle" style="text-align: center;">Au</th>
+      <th class="align-middle" style="text-align: center;">Ag</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody class="align-middle" style="text-align: center;">
+    <tr>
+      <th scope="row" class="align-middle">CABEZA &nbsp;</th>
+      <td class="align-middle"><span id="cabeza" style="text-align:center;"></span></td>
+      <td class="align-middle"><span id="cab_porc"></span></td> 
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Cobre en Cabeza" style="width:120px;"><input id="Cu_1" type="number" value="" oninput="balance()" class="border-danger text-danger form-control text-center mx-auto"></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Oro en Cabeza" style="width:120px;"><input id="Au_1" type="number" value="" oninput="balance()" class="border-danger text-danger form-control text-center mx-auto"></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Plata en Cabeza" style="width:120px;"><input id="Ag_1" type="number" value="" oninput="balance()" class="border-danger text-danger  form-control text-center mx-auto"></td>
+      <td class="align-middle"><span id="cont_met_Cu_1"></span></td>
+      <td class="align-middle"><span id="cont_met_Au_1"></span></td>
+      <td class="align-middle"><span id="cont_met_Ag_1"></span></td>
+      <td class="align-middle"><span id="rec_Cu_1"></span></td>
+      <td class="align-middle"><span id="rec_Au_1"></span></td>
+      <td class="align-middle"><span id="rec_Ag_1"></span></td>
+      <td class="align-middle"></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle">CONC. Cu</th>
+      <td class="align-middle"><span id="peso_Cu" class="font-weight-bold"></span></td>
+      <td class="align-middle"><span id="Cu_porc"></span></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Cobre en Concentrado"><input id="Cu_2" type="number" value="" oninput="balance()" class="border-dark form-control text-center mx-auto"></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Oro en Concentrado"><input id="Au_2" type="number" value="" oninput="balance()" class="border-dark form-control text-center mx-auto"></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Plata en Concentrado"><input id="Ag_2" type="number" value="" oninput="balance()" class="border-dark form-control text-center mx-auto"></td>
+      <td class="align-middle"><span id="cont_met_Cu_2" class="text-primary" style="text-align:center;"></span></td>
+      <td class="align-middle"><span id="cont_met_Au_2" class="text-primary" style="text-align:center;"></span></td>
+      <td class="align-middle"><span id="cont_met_Ag_2" class="text-primary" style="text-align:center;"></span></td>
+      <td class="align-middle"><span id="rec_Cu_2" style="text-align:center;" class="text-success"></span></td>
+      <td class="align-middle"><span id="rec_Au_2" style="text-align:center;" class="text-info"></span></td>
+      <td class="align-middle"><span id="rec_Ag_2" style="text-align:center;" class="text-info"></span></td>
+      <td class="align-middle"><span id="ratio_Cu"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle">RELAVE  &nbsp; &nbsp;</th>
+      <td class="align-middle"><span id="peso_Relave"></span></td>
+      <td class="align-middle"><span id="Relave_porc"></span></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Cobre en Relave"><input id="Cu_3" type="number" value="" oninput="balance()" class="border-secondary form-control text-center mx-auto"></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Oro en Relave"><input id="Au_3" type="number" value="" oninput="balance()" class="border-secondary form-control text-center mx-auto"></td>
+      <td class="align-middle" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Plata en Relave"><input id="Ag_3" type="number" value="" oninput="balance()" class="border-secondary form-control text-center mx-auto"></td>
+      <td class="align-middle"><span id="cont_met_Cu_3"></span></td>
+      <td class="align-middle"><span id="cont_met_Au_3"></span></td>
+      <td class="align-middle"><span id="cont_met_Ag_3"></span></td>
+      <td class="align-middle"><span id="rec_Cu_3"></span></td>
+      <td class="align-middle"><span id="rec_Au_3"></span></td>
+      <td class="align-middle"><span id="rec_Ag_3"></span></td>
+      <td class="align-middle"></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle">&nbsp;CAB. CALC.</th>
+      <td class="align-middle"></td>
+      <td class="align-middle"></td>
+      <td class="align-middle"><span id="Cu_4"></span>&nbsp;&nbsp;</td>
+      <td class="align-middle"><span id="Au_4"></span>&nbsp;&nbsp;</td>
+      <td class="align-middle"><span id="Ag_4"></span>&nbsp;&nbsp;</td>
+      <td class="align-middle"><span id="cont_met_Cu_4"></span></td>
+      <td class="align-middle"><span id="cont_met_Au_4"></span></td>
+      <td class="align-middle"><span id="cont_met_Ag_4"></span></td>
+      <td class="align-middle"></td>
+      <td class="align-middle"></td>
+      <td class="align-middle"></td>
+      <td class="align-middle"></td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+</div>
+<!--WATERMARK-->
+<div class="text-right small" id="watermark_2">
+  <a href="#" target="_blank"> POLIPROM SAC</a> © Todos los Derechos Reservados
+</div>
+</div>
+<!--Table-->
+<!-- BALANCE METALURGICO END -->
+
+
+
+<!-- TABLE PENALIDADES START -->
+<div class="card">
+  <div class="card-header">
+    <h5 style="text-align: center;">PENALIDADES</h5> 
+  </div>
+
+<div class="table-responsive">
+<!--Table-->
+<table id="tablePreview" class="table table-sm table-hover table-bordered">
+<!--Table head-->
+  <thead class="thead-light" class="align-middle" style="text-align: center;">
+    <tr class="align-middle" style="text-align: center;">
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Elemento">#</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Paso de Escala (%)">RANGO, %</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Máximo Permitido Sin Penalidades (%)">MAX., %</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Valor de Multa por TMS">PRECIO, $</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Elemento (%)">ENSAYE, %</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Unidad Calculada de Elemento">UND.</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Total Valor de Multa para Elemento por TMS">TOTAL, $</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Elemento">#</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Paso de Escala (ppm)">RANGO, ppm</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Máximo Permitido Sin Penalidades (ppm)">MAX., ppm</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Valor de Multa por TMS">PRECIO, $</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Ley de Análisis de Elemento (ppm)">ENSAYE, ppm</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Unidad Calculada de Elemento">UND.</th>
+      <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Total Valor de Multa para Elemento por TMS">TOTAL, $</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody class="align-middle" style="text-align: center;">
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">As</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="As_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="As_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="As_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="As_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="As_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="As_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">Cl</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Cl_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Cl_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Cl_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Cl_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Cl_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Cl_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Sb</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Sb_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Sb_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Sb_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Sb_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Sb_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Sb_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">Co</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Co_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Co_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Co_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Co_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Co_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Co_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Bi</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Bi_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Bi_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Bi_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Bi_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Bi_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Bi_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">F</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="F_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="F_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="F_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="F_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="F_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="F_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Pb</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Pb_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Pb_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Pb_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Pb_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Pb_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Pb_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">Hg</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Hg_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Hg_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Hg_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Hg_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Hg_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Hg_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Zn</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Zn_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Zn_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Zn_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Zn_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Zn_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Zn_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">In</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="In_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="In_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="In_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="In_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="In_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="In_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Cu</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Cu_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Cu_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Cu_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Cu_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Cu_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Cu_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">Mo</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Mo_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Mo_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Mo_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Mo_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Mo_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Mo_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Fe</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Fe_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Fe_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Fe_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Fe_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Fe_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Fe_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">Ni</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Ni_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Ni_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Ni_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Ni_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Ni_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Ni_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">S</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="S_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="S_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="S_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="S_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="S_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="S_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th scope="row" class="align-middle" style="text-align: center;">Se</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Se_paso" type="number" value="10" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Se_porc_max" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Se_precio_und" type="number" value="0" min="0" oninput="balance()">
+        </div>
+      </td>
+      <td> 
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ppm</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Se_ensayo" type="number" value="0" min="0"  oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Se_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Se_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">C</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="C_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="C_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="C_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="C_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="C_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="C_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <td colspan="7"></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Cd</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Cd_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Cd_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Cd_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Cd_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Cd_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Cd_precio_total" class="align-middle" style="text-align: center;"></span></td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Mn</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Mn_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Mn_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="Mn_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="Mn_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="Mn_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="Mn_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th colspan="7"></th>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">SO4</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="SO4_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="SO4_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="SO4_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="SO4_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="SO4_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="SO4_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <th colspan="7"></th>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">SiO2</th>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input  class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="SiO2_paso" type="number" value="0.1" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="SiO2_porc_max" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="SiO2_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+      </td>
+      <td>
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          id="SiO2_ensayo" type="number" value="0" min="0.0001" max="101" oninput="balance()">
+        </div>
+      </td>
+      <td><span id="SiO2_und" class="align-middle" style="text-align: center;"></span></td>
+      <td><span id="SiO2_precio_total" class="align-middle" style="text-align: center;"></span></td>
+      <td colspan="7"></td>
+    </tr>
+    <tr class="table-secondary text-left">
+      <td colspan="12" class="font-weight-bold p-3">TOTAL, POR 1 TMS DE CONC. Cu:
+      </td>
+      <td colspan="2" class="text-right align-middle">
+        <span class="font-weight-bold" id="total_penalidades">0</span>
+      </td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+</div>
+<!--Table PENALIDADES % COBRE EN LOTE-->
+<table class="table table-sm table-hover table-bordered">
+      <tbody>
+      <tr>
+        <td colspan="7" class="text-center align-midle table-active">  
+          <h5 class="mx-auto ">PENALIDADES POR PORCENTAJE DE COBRE EN LOTE</h5>
+        </td>    
+      </tr> 
+      <tr class="thead-light" class="align-middle text-center">         
+         <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Paso de Escala (%)">RANGO, %</th>
+         <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Mínimo Permitido Sin Penalidades (%)">MIN., %</th>
+         <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Valor de Multa por Rango (Por Cada Paso)">PRECIO, $</th>
+         <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Porcientos de Metal en Concentrado">COBRE, %</th>
+         <th class="align-middle" style="text-align: center;" data-toggle="tooltip" data-placement="top" title="Unidad Calculada">UND.</th>
+       </tr>   
+     <tr class="align-middle text-center">
+       <td class="align-middle"  >
+          <div class="input-group input-group-sm w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input  class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="pen_lote_paso" type="number" value="1" oninput="balance()">
+        </div>
+       </td>
+       <td class="align-middle">
+         <div class="input-group input-group-sm w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">%</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="pen_lote_porc_max" type="number" value="18" oninput="balance()">
+        </div>
+       </td>
+       <td class="align-middle">
+         <div class="input-group input-group-sm w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+          id="pen_lote_precio_und" type="number" value="0" min="0.01" oninput="balance()">
+        </div>
+       </td>
+       <td id="table_Cu_porc_lote_ensayo" class="align-middle text-center font-weight-bold">
+          <span id="Cu_porc_lote_ensayo">0</span>%
+        </div>
+       </td>
+       <td class="align-middle"><span id="pen_lote_und" class="align-middle" style="text-align: center;"></span></td>
+     </tr>
+     <tr class="font-weight-bold"> 
+      <td colspan="4">PENALIDADES POR PORCENTAJE DE COBRE EN LOTE POR 1 TMS DE CONC.:
+      </td>
+      <td colspan="2" class="align-middle text-right">
+      <span id="pen_lote_precio_total" class="align-middle"></span>  
+      </td>
+     </tr> 
+     <tr class="font-weight-bold"> 
+      <td colspan="4">TOTAL PENALIDADES POR PORCENTAJE DE COBRE EN LOTE:
+      </td>
+      <td colspan="2" class="align-middle text-right">
+      <span id="pen_lote_precio_total_2" class="align-middle"></span>  
+      </td>
+     </tr>
+   </tbody>
+</table>
+
+</div>
+<!-- TABLE PENALIDADES END -->
+<!-- RESUMEN START -->
+<div class="card">
+  <div class="card-header">
+    <h5 class="font-weight-bold text-center">RESUMEN</h5> 
+  </div>
+</div>
+<div class='table-responsive'>
+<!--Table-->
+<table id="tablePreview" class="table table-hover table-bordered">
+<!--Table head-->
+  <thead class="align-middle" style="text-align: center;">
+    <th colspan="5" class="p-3 mb-2 bg-success text-black" id="header_metales">METALES PARA VENTA</th>
+    <tr>
+      <th>METAL</th>
+      <th>PESO DE METAL NETO</th>
+      <th>PRECIO, $</th>
+      <th>PORC. DE PAGO, %</th>
+      <th>VALOR, $</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Cu</th>      
+      <td class="align-middle" style="text-align: center;">
+        <span id="Cu_peso_tm_venta" >0</span> TMF
+      </td>
+      <td class="">     
+        <div class="input-group w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group" id="" data-toggle="tooltip" data-placement="top" title="Medidas de Precios">
+              <select id="Cu_price_select" class="custom-select" name="Cu_price_select" oninput="balance()">
+                <option value="4" selected disabled>Selec.</option> 
+                <option value="1">$/lb</option> 
+                <option value="2">$/TM</option>
+                <option value="3">$/kg</option>
+              </select>
+            </span>
+          </div>
+          <input type="number"  class="form-control" id="Cu_price" value="0" type="number" oninput="balance()"  data-toggle="tooltip" data-placement="top" title="Precio de Cobre">
+        </div>   
+      </td>
+      <td class="">
+        <div class="input-group input-group w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing">%</span>
+          </div>
+          <input class="form-control " aria-describedby="inputGroup-sizing" 
+          id="Cu_porc_de_pago" type="number" value="90" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Porcentaje de Pago por Precio de Cobre">
+        </div>
+      </td>
+      <td class="align-middle text-right">
+        <span id="Cu_precio_total2">0</span>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Au</th>      
+      <td class="align-middle" style="text-align: center;">
+        <span id="Au_peso_tm_venta" >0</span> Oz &nbsp;&nbsp;
+      </td>
+      <td class="">     
+        <div class="input-group input-group w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing">$/Oz</span>
+          </div>
+          <input  class="form-control" aria-describedby="inputGroup-sizing" 
+          id="Au_price" type="number" value="0" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Precio de Oro">
+        </div>
+      </td>
+      <td class="">
+        <div class="input-group input-group w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing">%</span>
+          </div>
+          <input class="form-control" aria-describedby="inputGroup-sizing" 
+          id="Au_porc_de_pago" type="number" value="90" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Porcentaje de Pago por Precio de Oro"> 
+        </div>
+      </td>
+      <td class="align-middle text-right">
+        <span id="Au_precio_total">0</span>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" class="align-middle" style="text-align: center;">Ag</th>      
+      <td class="align-middle" style="text-align: center;">
+        <span id="Ag_peso_tm_venta" >0</span> Oz &nbsp;&nbsp;
+      </td>
+      <td>     
+        <div class="input-group input-group w-50 mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing">$/Oz</span>
+          </div>
+          <input class="form-control" aria-describedby="inputGroup-sizing" 
+          id="Ag_price" type="number" value="0" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Precio de Plata">
+        </div>  
+      </td>
+      <td class="">
+        <div class="input-group input-group w-50 mx-auto">
+          <div class="input-group-prepend" >
+            <span class="input-group-text" id="inputGroup-sizing">%</span>
+          </div>
+          <input class="form-control" aria-describedby="inputGroup-sizing" data-toggle="tooltip" data-placement="top" title="Porcentaje de Pago por Precio de Plata"
+          id="Ag_porc_de_pago" type="number" value="90" oninput="balance()">
+        </div>
+      </td>
+      <td class="align-middle text-right">
+        <span id="Ag_precio_total">0</span>
+      </td>
+    </tr>   
+    <tr class="font-weight-bold">
+      <td scope="row" colspan="4" >
+        SUB TOTAL:
+      </td>
+      <td scope="row" class="text-right">
+        <span id="Suma_de_metales_total">0</span> 
+      </td>
+    </tr>
+    <tr class="font-weight-bold font-italic table-warning">
+      <td scope="row" colspan="4" >
+        <div class="input-group input-group w-25">
+          <div class="input-group-prepend ">
+            <span class="input-group-text font-weight-bold" id="inputGroup-sizing">IGV, %</span>
+          </div>
+          <input class="form-control font-weight-bold font-italic" aria-describedby="inputGroup-sizing" 
+          id="igv_input" type="number" value="18" oninput="balance()" data-toggle="tooltip" data-placement="top" title="Impuesto General a las Ventas"> 
+        </div>
+      </td>
+      <td scope="row" class="text-right align-middle">
+        <span id="igv_18">0</span> 
+      </td>
+    </tr>
+    <tr class="table-success font-weight-bold">
+      <td scope="row" colspan="4">
+        TOTAL VALOR DE METALES: 
+      </td>
+      <td scope="row" class="text-right">
+        <span id="total_metales_igv">0</span> 
+      </td>
+    </tr>
+    <th colspan="5" class="font-italic text-center">
+      RENTABILIDAD
+    </th>
+    <tr class="font-italic table-info">
+      <td scope="row" colspan="4" >
+        VALOR DE 1 TM DE MINERAL HUMEDO BRUTO (TMH):
+      </td>
+      <td scope="row" class="text-right">
+        <span id="beneficio_1tm">0</span> 
+      </td>
+    </tr>
+    <tr class="font-italic table-info">
+      <td scope="row" colspan="4" >
+        VALOR DE 1 TM DE CONCENTRADO DE MINERAL:
+      </td>
+      <td scope="row" class="text-right">
+        <span id="valor_1tm_conc">0</span> 
+      </td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--WATERMARK-->
+<div class="text-right small" id="watermark_3">
+  <a href="#" target="_blank"> POLIPROM SAC</a> © Todos los Derechos Reservados
+</div>
+</div><!--Table RESPONSIVE END-->
+
+
+
+
+
+<div class='table-responsive'>
+<!--Table-->
+<table id="tablePreview" class="table table-hover table-bordered">
+<!--Table head-->
+  <thead class="align-middle text-center" >
+    <th colspan="5" class="p-3 mb-2 bg-danger text-black" id="header_gastos">GASTOS, DESCUENTOS Y RETENCIONES</th>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td>
+        EXPLORACION DE MINERAL  
+      </td>
+      <td class="text-right">
+        <span id="gastos_exploracion">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td>
+        SERVICIOS DE FABRICA  
+      </td>
+      <td class="text-right">
+        <span id="gastos_fabrica_cu">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td>
+        INCOTERM DAP 1, <span id="transporte_1_1"></span>  
+      </td>
+      <td class="text-right">
+        <span id="gastos_transporte">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td>
+        INCOTERM DAP 2, <span id="transporte_2_2"></span>  
+      </td>
+      <td class="text-right">
+        <span id="gastos_transporte_2">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td>
+        PENALIDADES, <span id="penalidades_en_gastos">0</span> por 1TMS de Conc.Cu   
+      </td>
+      <td class="text-right">
+        <span id="total_penalidades_gastos">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td>
+        PENALIDADES POR PORCENTAJE DE COBRE EN LOTE, <span id="gastos_pen_lote_1tms">0</span> por 1TMS de Conc.Cu
+      </td>
+      <td class="text-right">
+        <span id="gastos_pen_lote_total">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td scope="row">        
+        <div class="input-group input-group-sm" style="width:400px;">
+          <div class="input-group-prepend" >ADMINISTRACIÓN,&nbsp; <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  data-toggle="tooltip" data-placement="top" title="Gastos por Administración"
+          id="admin_gastos" type="number" value="0" oninput="balance()">&nbsp; por 1TMS de Conc.Cu
+        </div>          
+      </td>
+      <td class="text-right">
+        <span id="total_admin_gastos" >0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td scope="row">        
+        <div class="input-group input-group-sm" style="width:400px;">
+          <div class="input-group-prepend" >MAQUILA,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" data-toggle="tooltip" data-placement="top" title="Gastos por Maquila"
+          id="maquila_gastos" type="number" value="0" oninput="balance()">&nbsp; por 1TMS de Conc.Cu 
+        </div>          
+      </td>
+      <td class="text-right">
+        <span id="total_maquila_gastos" >0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td scope="row">        
+        <div class="input-group input-group-sm" style="width:400px;">
+          <div class="input-group-prepend" >REFINACIÓN, Au &nbsp;&nbsp;&nbsp;&nbsp; <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+          </div>
+          <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" data-toggle="tooltip" data-placement="top" title="Gastos por Refinación de Oro"
+          id="refinacion_Au" type="number" value="0" oninput="balance()">&nbsp; &nbsp; por 1 Oz en Conc.Cu
+        </div>          
+      </td>
+      <td class="text-right">
+        <span id="total_refinacion_Au">0</span> 
+      </td>
+    </tr> 
+    <tr>
+      <td scope="row">        
+        <div class="input-group input-group-sm" style="width:400px;">
+          <div class="input-group-prepend" >REFINACIÓN, Ag &nbsp;&nbsp;&nbsp;&nbsp; <span class="input-group-text" id="inputGroup-sizing-sm" >$</span>
+          </div>
+          <input class="form-control"  aria-label="Small" aria-describedby="inputGroup-sizing-sm" data-toggle="tooltip" data-placement="top" title="Gastos por Refinación de Plata"
+          id="refinacion_Ag" type="number" value="0" oninput="balance()">&nbsp; &nbsp; por 1 Oz en Conc.Cu
+        </div>          
+      </td>
+      <td class="text-right">
+        <span id="total_refinacion_Ag">0</span> 
+      </td>
+    </tr>
+    <tr class="font-weight-bold table-danger">
+      <td scope="row">        
+        TOTAL VALOR DE DESCUENTOS:         
+      </td>
+      <td class="text-right">
+        <span id="total_deducciones">0</span> 
+      </td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+</div>
+
+
+<div class='table-responsive'>
+<!--Table-->
+
+<table id="tablePreview" class="table table-hover table-bordered">
+<!--Table head-->
+  <thead class="align-middle" style="text-align: center;">
+    <th colspan="5" class="p-1 mb-1 bg-primary text-black" id="header_neto">NETO A PAGAR</th>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr class="font-weight-bold table-primary">
+      <td class="align-middle">
+        TOTAL VALOR DE LOTE:
+      </td>
+      <td class="text-right">
+        <span id="beneficio_total">0</span><br>
+        <span id="beneficio_total_words"></span>
+      </td>
+    </tr> 
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+</div>
+</div>
+
+<!--FECHA-->
+<span id="date"  class="float-right"></span>
+<script>
+var fecha = new Date();
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',time: 'numeric' };
+$("#date").html(fecha.toLocaleDateString("es-ES", options));
+</script>
+<!--IMPRIMIR REPORTE-->
+
+  <button type="button" class="btn btn-lg btn-block  btn-light btn-outline-dark" id="print_button" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i> IMPRIMIR REPORTE</button>
+<br>
+
+
+<div class="card align-middle"  style="text-align: center;">
+  <div class="card-header" id="header_prices_2">
+    PRECIOS DE METALES
+  </div>
+  <div class="card-body">
+    <div class="flex-container">
+      <div id="chart_1"><A HREF="http://www.kitco.com/connecting.html">
+        <IMG SRC="http://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" BORDER="0" ALT="[Most Recent Quotes from www.kitco.com]"></A>
+      </div>
+      <div id="chart_2"><A HREF="http://www.kitcometals.com/connecting.html">
+        <IMG SRC="http://www.kitconet.com/charts/metals/base/copper-d.gif" ALT="[Most Recent Quotes from www.kitco.com]"></A>
+      </div>
+      <div id="chart_3"><A HREF="http://www.kitco.com/connecting.html">
+        <IMG SRC="http://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" BORDER="0" ALT="[Most Recent Quotes from www.kitco.com]"></A>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--FOOTER-->
+<div class="jumbotron mb-0 pb-3 pt-4 jumbotron-fluid" id="footer">
+  <div class="container">
+    <h3 class="display-5"><a href="#" target="_blank">POLIPROM SAC</a></h3>
+    <p class="lead"></p>
+    <p class="lead">
+      CALCULO DE VALORIZACION DE MINERAL para COBRE, ORO, PLATA (Cu, Au, Ag) online 
+      <br>   
+      POLIPROM SAC © Todos los derechos Reservados.
+    </p>
+  </div>
+</div>
+
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2px;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+/* AJUSTES PARA IMPRIMIR */
+@media print 
+{
+    @page {
+      size: A4; /* DIN A4 standard, Europe */
+      margin:5mm 10mm 10mm 10mm;
+    }
+    html, body {
+        width: 210mm;
+        /* height: 297mm; */
+        height: 285mm;
+        font-size: 14px;
+        background: #FFF;
+        overflow:visible;
+    }
+    body {
+        padding-top:5mm;
+    }
+    #print_button, #header_prices_2, #chart_1, #chart_2, #chart_3, #footer {
+      display: none;
+    }
+}
+</style>
+</body>
+</html>
