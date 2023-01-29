@@ -11,8 +11,8 @@
 
 //откл правую кнопку
 
-  document.oncontextmenu = cmenu; 
-  function cmenu() { return false; }
+  // document.oncontextmenu = cmenu; 
+  // function cmenu() { return false; }
 
 
 // /////////////////////////////////////////////////////////////////
