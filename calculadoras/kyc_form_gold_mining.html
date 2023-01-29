@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Autores: Stanislav Tsvitkov, Vadym Grechuk.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="copyright" content="POLIPROM SAC" />
+	<title>KYC Formulario - POLIPROM SAC</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+<!-- HEADER START-->
+<h1 class="text-center">KYC Formulario</h1>
+  <h4 class="text-center">"KYC" ("Know Your Customer") - Conoce a Tu Cliente</h4>
+  <h6 class="text-center">Para Empresas Productores de oro</h6>
+<hr>
+<!-- HEADER END-->
+
+
+<!--INTRO-->
+    <div class="container">
+      <div class="row col-md-12">       
+          <p class="text-center"><h2>INTRODUCCIÓN</h2></p>
+          <p>
+            Con el objetivo de cumplir con la normativa internacional, combatir el financiamiento del terrorismo y el lavado de activos, se requiere que todos los vendedores de metales y piedras preciosas, verifiquen, registren y obtengan información necesaria que identifique a sus proveedores de minerales.
+          </p>
+          <p>
+            Lo mencionado en el párrafo precedente, implica que cuando nuestros proveedores aperturen una cuenta con nosotros, les pediremos diversa información sobre su compañía, los propietarios, permisos, entre otros, que nos permita identificarlos. Del mismo modo, solicitaremos copias de distintos documentos, tanto de la compañía como de sus propietarios.
+          </p>
+          <div class="col-md-6">
+          </div>
+      </div>
+    </div>
+<hr>
+<br>
+
+<div class="text-right small" id="watermark_3">
+  Documento del sitio POLIPROM SAC
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+         <b>1. DETALLAES DE LA COMPAÑIA</b>
+        </p>
+        <div class="row align-middle">
+          <div class="col-md-12">
+            <span>Razón social:</span>
+            <textarea class="form-control" id="" rows="1"></textarea>
+            <span>Dirección (incluyendo código postal y país):</span>
+            <textarea class="form-control" id="" rows="2"></textarea>
+
+            <div class="row form-group align-middle">
+              <div class="col-md-6">
+                <span>Teléfono:</span>
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+              <div class="col-md-6">
+                <span>Email:</span>
+                <input type="email" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+          <p>
+            <b>2. REGISTROS</b> <span class="font-italic">(proporcione todos los detalles que pueda)</span>
+          </p>
+          <div class="row align-middle">
+            <div class="col-md-12">
+              <div class="row form-group align-middle">
+              <div class="col-md-6">
+                <span>RUC N°:</span>
+                <input type="text" class="form-control" id="" placeholder="">
+                <span>Partida registral N°:</span>
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+              <div class="col-md-6">
+                <span>País de constitución:</span>
+                <input type="text" class="form-control" id="" placeholder="">
+                <span>Oficina registral:</span>
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+            </div>
+          </div>
+            <p>
+            <b>3. DETALLES DE LOS PROPIETARIOS</b>
+          </p>
+          
+<!--Table-->
+<table id="tablePreview" class="table table-bordered table-striped table-hover table-responsive">
+<!--Table head-->
+  <thead>
+    <tr>
+      <th class="align-middle text-center">Nombre y Apellido de Propietarios</th>
+      <th class="align-middle text-center">Porcentaje,%</th>
+      <th class="align-middle text-center">Nacionalidad</th>
+      <th class="align-middle text-center">DNI,CE,Pasaporte</th>
+      <th class="align-middle text-center">País de residencia</th>
+      <th class="align-middle text-center">Número de contacto</th>
+      <th class="align-middle text-center">Año de incorp. a la compañía</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr>    
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr> 
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr> 
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+          <p>
+            <b>4. FIRMANTES AUTORIZADOS</b> <span class="font-italic"> (Indicar todas las personas autorizadas a firmar por la empresa y poner una firma de muestra)</span>
+          </p>
+          
+<!--Table-->
+<table id="tablePreview" class="table table-hover table-bordered">
+<!--Table head-->
+  <thead>
+    <tr>
+      <th class="align-middle text-center">Nombre y Apellido</th>
+      <th class="align-middle text-center">Cargo</th>
+      <th class="align-middle text-center">Firma</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr>    
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr> 
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr> 
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>    
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+
+
+            <p>
+              <b>5. ESTRUCTURA ADMINISTRATIVA</b>
+            </p>
+<!--Table-->
+<table id="tablePreview" class="table table-hover table-bordered">
+<!--Table head-->
+  <thead>
+    <tr>
+      <th class="align-middle text-center">Nombre y Apellido</th>
+      <th class="align-middle text-center">Nacionalidad</th>
+      <th class="align-middle text-center">Fecha de Nacimiento</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">Gerencia General</td> 
+    </tr>
+    <tr>  
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr> 
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr> 
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr>    
+      <td colspan="3" class="text-center">Administración</td> 
+    </tr>
+    <tr>  
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr>  
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr>  
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr>  
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+    <tr>  
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="date" class="form-control"></td>
+    </tr>
+
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+
+
+            <p>
+              <b>6. RECURSOS HUMANOS</b>
+            </p>
+          <div class="row align-middle">
+            <div class="col-md-12">
+              <div class="row form-group align-middle">
+              <div class="col-md-6">
+                <span>Número de empleados en la compañía:</span>
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+              <div class="col-md-6">
+                <span>Número de empleados sub-contratados (si aplica):</span>
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+            </div>
+          </div>
+
+            <p>
+              <b>7. INFORMACIÓN FINANCIERA</b>
+            </p>
+           
+            <!--Table-->
+<table id="tablePreview" class="table table-hover table-striped table-bordered">
+<!--Table head-->
+  <thead>
+    <tr>
+      <th></th>
+      <th class="align-middle text-center">Moneda</th>
+      <th class="align-middle text-center">Último periodo</th>
+      <th class="align-middle text-center">Año anterior al último periodo</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td class="align-middle">Capital social</td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">Presupuesto total</td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">Ventas</td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">Utilidades</td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td rowspan="4" class="align-middle">¿Generalmente, que método <br>de pago utiliza la compañía con sus <br>  proveedores?</td>
+      <td colspan="2" class="align-middle text-center"><b>Tipo de Pago</b></td>
+      <td class="align-middle text-center"><b>Porcentaje, %</b></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="align-middle">Transferencia bancaria</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="align-middle">Cheques</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="align-middle">Efectivo</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td rowspan="4" class="align-middle">Fuente de fondos para operación minera</td>
+      <td colspan="3">
+          <div class="form-check">
+           <input class="form-check-input" type="checkbox" value="" id="Capitalpropio">
+          <label class="form-check-label" for="Capitalpropio">
+            Capital propio
+          </label>
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <div class="form-check">
+           <input class="form-check-input" type="checkbox" value="" id="Entidadestatal">
+          <label class="form-check-label" for="Entidadestatal">
+            Entidad estatal:
+          </label>
+          <input type="text" class="form-control">
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <div class="form-check">
+           <input class="form-check-input" type="checkbox" value="" id="Prestamobancario">
+          <label class="form-check-label" for="Prestamobancario">
+            Préstamo bancario:
+          </label>
+          <input type="text" class="form-control">
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <div class="form-check">
+           <input class="form-check-input" type="checkbox" value="" id="Prestamoterceros">
+          <label class="form-check-label" for="Prestamoterceros">
+            Préstamo de terceros:
+          </label>
+          <input type="text" class="form-control">
+          </div>
+      </td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+            <p>
+              <b>8. DETALLES DEL BANCO</b> <span class="font-italic">(los pagos se harán únicamente al banco señalado en este formulario)</span>
+            </p>
+
+
+<!--Table-->
+<table id="tablePreview" class="table table-bordered table-hover">
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td colspan="1"class="align-middle">Nombre del banco (1):</td>
+      <td colspan="3"><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="align-middle">Dirección:</td>
+      <td colspan="3"><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">Moneda (siglas):</td>
+      <td><input type="text" class="form-control"></td>
+      <td class="align-middle">Número de cuenta:</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="align-middle">Código Swift:</td>
+      <td colspan="3"><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="1"class="align-middle">Nombre del banco (2):</td>
+      <td colspan="3"><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="align-middle">Dirección:</td>
+      <td colspan="3"><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">Moneda (siglas):</td>
+      <td><input type="text" class="form-control"></td>
+      <td class="align-middle">Número de cuenta:</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="align-middle">Código Swift:</td>
+      <td colspan="3"><input type="text" class="form-control"></td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+            
+            <p>
+              <b>9. AUDITORES EXTERNOS </b>
+            </p>
+
+<!--Table-->
+<table id="tablePreview" class="table table-bordered table-hover">
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td class="align-middle">¿Tiene auditores externos? :</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si1">
+          <label class="form-check-label" for="Si1">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No1">
+          <label class="form-check-label" for="No1">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">Si la respuesta es sí, especifique <br>el nombre del auditor: </td>
+      <td class="align-middle"><input type="text" class="form-control"></td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+
+            <p>
+              <b>10. ACTIVIDAD DE NEGOCIOS</b>
+            </p>
+
+<!--Table-->
+<table id="tablePreview" class="table table-bordered table-hover">
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td class="align-middle">Tipo de negocio:</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si2">
+          <label class="form-check-label" for="Si2">
+            Mina a gran escala (>100 kg/anual)
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si3">
+          <label class="form-check-label" for="Si3">
+            Mina a mediana escala (25-100 kg/anual)
+          </label>
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si4">
+          <label class="form-check-label" for="Si4">
+           Mina a pequeña escala (25 kg/anual)
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si5">
+          <label class="form-check-label" for="Si5">
+           Comerciante de metales preciosos
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si6">
+          <label class="form-check-label" for="Si6">
+           Minero artesanal
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si7">
+          <label class="form-check-label" for="Si7">
+           Otros, por favor especificar:
+          </label>
+          &nbsp;
+          </div>
+          <input type="text" class="form-control">
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">Descripción del negocio <br> principal - Actividad</td>
+      <td class="align-middle"><input type="text" class="form-control"></td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+          
+            <p>
+              <b>11. ORIGEN FÍSICO DE LOS METALES PRECIOSOS, CAPACIDAD Y PRÁCTICAS</b>
+            </p>
+
+<!--Table-->
+<table id="tablePreview" class="table table-bordered table-hover">
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td class="align-middle">¿De cuántos lugares es el oro extraído?</td>
+      <td><input type="text" class="form-control"></td>
+    </tr> 
+    <tr>
+      <td class="align-middle">¿De cuántos lugares es el oro extraído?</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>¿Dónde se ubican exactamente <br> las minas? (país, provincia, ciudad <br>más cercana, GPS coordenadas)</td>
+      <td>
+          <textarea class="form-control" id="" rows="3"></textarea>
+      </td> 
+    </tr> 
+    <tr>
+      <td class="align-middle">¿A qué distancia (km) se sitúan <br>las operaciones de extracción del <br> centro de acopio/planta <br> de procesamiento?</td>
+      <td class="align-middle"><textarea class="form-control" id="" rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Se requiere que las minas tengan <br>licencia de operación/explotación?</td>
+      <td><div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si8">
+          <label class="form-check-label" for="Si8">
+           Sí
+          </label>
+          &nbsp;
+          </div>         
+                <span>Día de emisión:</span>
+                <input type="date" class="form-control" id="" placeholder="">
+                <span>Fecha de expiración:</span>
+                <input type="date" class="form-control" id="" placeholder="">
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No8">
+          <label class="form-check-label" for="No8">
+           No
+          </label>
+          &nbsp;
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Cuál es la producción de las minas?</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Cuáles son las reservas <br>estimadas de la mina?</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Cuántas personas trabajan en la mina?</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+     <tr>
+      <td class="align-middle">¿Cuál es el método de extracción de oro <br>(minería, equipos y métodos)?</td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Existen procedimientos y sistemas <br> integrales para garantizar la <br>seguridad del personal minero <br>(protección adecuada, capacitaciones<br> en salud y seguridad, primeros <br>auxilios y procedimientos de emergencia)?</td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si14">
+          <label class="form-check-label" for="Si14">
+           Sí (por favor describa):
+          </label>
+          &nbsp;
+          </div>         
+                <textarea class="form-control" id="" rows="3"></textarea>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No9">
+          <label class="form-check-label" for="No9">
+           No
+          </label>
+          &nbsp;
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Existen procedimientos y sistemas <br> integrales en la mina para su menor<br>  impacto negativo en el entorno por <br> la extracción de oro? (Ejemplo: <br> Sistema para evitar la contaminación).</td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si10">
+          <label class="form-check-label" for="Si10">
+           Sí (por favor describa):
+          </label>
+          &nbsp;
+          </div>         
+                <textarea class="form-control" id="" rows="3"></textarea>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No11">
+          <label class="form-check-label" for="No11">
+           No
+          </label>
+          &nbsp;
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Apoya en el desarrollo <br>de la comunidad local?</td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si15">
+          <label class="form-check-label" for="Si15">
+           Sí (por favor describa):
+          </label>
+          &nbsp;
+          </div>         
+                <textarea class="form-control" id="" rows="3"></textarea>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No16">
+          <label class="form-check-label" for="No16">
+           No
+          </label>
+          &nbsp;
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Toma las medidas <br>necesarias para evitar<br> el trabajo infantil?</td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si17">
+          <label class="form-check-label" for="Si17">
+           Sí (por favor describa):
+          </label>
+          &nbsp;
+          </div>         
+                <textarea class="form-control" id="" rows="3"></textarea>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No18">
+          <label class="form-check-label" for="No18">
+           No
+          </label>
+          &nbsp;
+          </div>
+      </td>
+    </tr>
+      <tr>
+      <td class="align-middle">¿Existe algún grupo armado <br>cerca de la mina? Si es <br> afirmativa su respuesta, por <br>favor proporcione información<br> sobre el motivo.</td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si60">
+          <label class="form-check-label" for="Si60">
+           Sí (por favor describa):
+          </label>
+          &nbsp;
+          </div>         
+                <div>
+                  <div class="form-check">
+                   &nbsp; <input class="form-check-input" type="checkbox" value="" id="Si61">
+                  <label class="form-check-label" for="Si61">
+                  Grupo armado del estado
+                  </label>
+                  
+                  </div>
+                  <div class="form-check">
+                  &nbsp; <input class="form-check-input" type="checkbox" value="" id="Si62">
+                  <label class="form-check-label" for="Si62">
+                  Grupo armado no estatal
+                  </label>
+                  
+                  </div>
+                  <div class="form-check">
+                  &nbsp; <input class="form-check-input" type="checkbox" value="" id="Si63">
+                  <label class="form-check-label" for="Si63">
+                  Fuerzas de seguridad pública o privada
+                  </label>
+                  
+                  </div>
+                   <textarea class="form-control" id="" rows="2"></textarea>
+                </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No64">
+          <label class="form-check-label" for="No64">
+           No
+          </label>
+          &nbsp;
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Cómo transporta el mineral? </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si65">
+          <label class="form-check-label" for="Si65">
+           Por su propia empresa
+          </label>
+          &nbsp;
+          </div>         
+                
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No66">
+          <label class="form-check-label" for="No66">
+           Por un tercero (compañía externa), ¿Qué compañía?
+          </label>
+          &nbsp;
+          </div>
+          <textarea class="form-control" id="" rows="2"></textarea>
+      </td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+
+            <p>
+              <b>12. CUESTIONARIO DE DILIGENCIA, CONTRA EL LAVADO DE ACTIVOS Y GESTIÓN DE CADENA DE SUMINISTRO</b>
+            </p>
+
+<!--Table-->
+<table id="tablePreview" class="table table-bordered table-hover">
+  <!--Table body-->
+  <tbody>
+    <tr>
+      <td class="align-middle">¿Practica una debida diligencia en sus clientes/proveedores?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si20">
+          <label class="form-check-label" for="Si20">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No21">
+          <label class="form-check-label" for="No21">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Quién es su principal cliente/proveedor/para su actividad? Ejemplo (explosivo)?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si22">
+          <label class="form-check-label" for="Si22">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No23">
+          <label class="form-check-label" for="No23">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Cada cuánto tiempo lleva el registro de sus proveedores?</td>
+      <td class="align-middle">_____ años</td>
+    </tr>
+    <tr>
+      <td class="align-middle">¿Sigue todas las reglas y normativas que rigen su negocio?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si24">
+          <label class="form-check-label" for="Si24">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No25">
+          <label class="form-check-label" for="No25">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Sigue todas las reglas y normativas que rigen su negocio?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si26">
+          <label class="form-check-label" for="Si26">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No27">
+          <label class="form-check-label" for="No27">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Sigue el procedimiento contra el lavado de activos?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si28">
+          <label class="form-check-label" for="Si28">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No29">
+          <label class="form-check-label" for="No29">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Tiene una política contra el lavado de activos? <span class="font-italic">(Si tiene una política contra el lavado de activos, hay que enviar una copia)</span></td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si30">
+          <label class="form-check-label" for="Si30">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No31">
+          <label class="form-check-label" for="No31">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Su cadena de suministro es verificada por alguna entidad nacional?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si32">
+          <label class="form-check-label" for="Si32">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No33">
+          <label class="form-check-label" for="No33">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Tiene una política de gestión de cadena de suministro?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si34">
+          <label class="form-check-label" for="Si34">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No35">
+          <label class="form-check-label" for="No35">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Si marcaste la pregunta anterior ”No”, precise si entiende el objetivo de la guía OECD y/o buscará capacitación para entenderla?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si36">
+          <label class="form-check-label" for="Si36">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No37">
+          <label class="form-check-label" for="No37">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Tiene un marco de gestión de la cadena de suministro?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si38">
+          <label class="form-check-label" for="Si38">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No39">
+          <label class="form-check-label" for="No39">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Es capaz de evaluar el riesgo de la cadena de suministro?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si40">
+          <label class="form-check-label" for="Si40">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No41">
+          <label class="form-check-label" for="No41">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Tiene un plan de mitigación/control de riesgos?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si42">
+          <label class="form-check-label" for="Si42">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No43">
+          <label class="form-check-label" for="No43">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Lleva a cabo una auditoría independiente sobre la gestión de la cadena de suministro?
+        <br>De ser así, favor de indicar el nombre del auditor:<input type="text" class="form-control">
+      </td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si44">
+          <label class="form-check-label" for="Si44">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No45">
+          <label class="form-check-label" for="No45">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+    <tr>
+      <td class="align-middle">¿Realiza una debida diligencia anual sobre la cadena de suministro?</td>
+      <td>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Si46">
+          <label class="form-check-label" for="Si46">
+            Sí
+          </label>
+          &nbsp;
+          </div>
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="No47">
+          <label class="form-check-label" for="No47">
+            No
+          </label>
+          </div>
+      </td>  
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+  
+  <span>Por favor proporciónenos una copia de su política de gestión de la cadena de suministro y de su procedimiento de debida diligencia (si es aplicable).</span>
+  <br><span>Yo, <input type="text" class="form-control">, confirmo que la información completada líneas arriba es verdadera y correcta.</span>
+  <br>
+  <br>
+  <div>
+    <p>
+    <span>Cargo___________________  Nombre_________________________________________________________ Firma y Sello___________________ </span>
+    </p>
+  </div>
+
+    </div>
+  </div>
+</div>
+<!--INTRO-->
+
+<!--FECHA-->
+<span id="date"  class="float-right"></span>
+<script>
+var fecha = new Date();
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',time: 'numeric' };
+$("#date").html(fecha.toLocaleDateString("es-ES", options));
+</script>
+
+
+
+<br>
+<br>
+<div class="text-right small" id="watermark_3">
+  POLIPROM SAC
+</div>
+
+
+<!--IMPRIMIR REPORTE-->
+<button type="button" class="btn btn-lg btn-block  btn-light btn-outline-dark" id="print_button" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i> IMPRIMIR DOCUMENTO</button>
+
+
+<br>
+<br>
+
+<div class="card align-middle"  style="text-align: center;">
+  <div class="card-header" id="header_prices_2">
+    PRECIOS DE METALES
+  </div>
+  <div class="card-body">
+    <div class="flex-container">
+      <div id="chart_1"><A HREF="http://www.kitco.com/connecting.html">
+        <IMG SRC="http://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" BORDER="0" ALT="[Most Recent Quotes from www.kitco.com]"></A>
+      </div>
+      <div id="chart_3"><A HREF="http://www.kitco.com/connecting.html">
+        <IMG SRC="http://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" BORDER="0" ALT="[Most Recent Quotes from www.kitco.com]"></A>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--FOOTER-->
+<div class="jumbotron mb-0 pb-3 pt-4 jumbotron-fluid" id="footer">
+  <div class="container">
+    <h3 class="display-5">POLIPROM SAC</h3>
+    <p class="lead"></p>
+    <p class="lead">  
+      POLIPROM SAC © Todos los derechos Reservados.
+    </p>
+  </div>
+</div>
+
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2px;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+/* AJUSTES PARA IMPRIMIR */
+@media print 
+{
+    @page {
+      size: A4; /* DIN A4 standard, Europe */
+      margin:5mm 10mm 10mm 10mm;
+    }
+    html, body {
+        width: 210mm;
+        /* height: 297mm; */
+        height: 285mm;
+        font-size: 14px;
+        background: #FFF;
+        overflow:visible;
+    }
+    body {
+        padding-top:5mm;
+    }
+    #print_button, #header_prices_2, #chart_1, #chart_2, #chart_3, #chart_4, #footer {
+      display: none;
+    
+    }
+}
+
+
+
+</style>
+</body>
+</html>
