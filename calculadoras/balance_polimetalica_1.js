@@ -19,10 +19,10 @@
 // /////////////////////////////////////////////////////////////////
 // //
 
-  if (window.location.href == "https://poliprom.pe/calculadoras/balance_met_polimetalica.html") {
+  if (window.location.href == "http://poliprom.pe/calculadoras/balance_met_polimetalica.html") {
   balance();
 } else {
-  window.alert("ERROR 404. INTERNET CONNECTION WITH ´https://poliprom.pe´ IS LOST. PLEASE, CHECK YOUR INTERNET CONNECTION.");
+  window.alert("ERROR 404. INTERNET CONNECTION WITH ´http://poliprom.pe´ IS LOST. PLEASE, CHECK YOUR INTERNET CONNECTION.");
   window.close();
 }
   
