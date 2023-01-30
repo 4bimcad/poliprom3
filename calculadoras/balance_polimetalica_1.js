@@ -1244,7 +1244,7 @@ function balance() {
     $("#total_admin_gastos").html(total_admin_gastos.toLocaleString("en-US", {style: "currency", currency: "USD"}));
 //MAQUILA GASTOS
     var  maquila_gastos = $("#maquila_gastos").val();
-    var  total_maquila_gastos = maquila_gastos * peso_Pb;
+    var  total_maquila_gastos = maquila_gastos * Pb_peso_tm_venta;
     $("#total_maquila_gastos").html(total_maquila_gastos.toLocaleString("en-US", {style: "currency", currency: "USD"}));
 //REFINACION Au
     var  refinacion_Au = $("#refinacion_Au").val();
@@ -1425,7 +1425,7 @@ if ($("#Pb_price_select").val() === '1') {
     $("#Ag_precio_total_2").html(Ag_precio_total_2.toLocaleString("en-US", {style: "currency", currency: "USD"}));
 //MAQUILA GASTOS
     var  maquila_gastos_2 = $("#maquila_gastos_2").val();
-    var  total_maquila_gastos_2 = maquila_gastos_2 * peso_Zn;
+    var  total_maquila_gastos_2 = maquila_gastos_2 * Zn_peso_tm_venta;
     $("#total_maquila_gastos_2").html(total_maquila_gastos_2.toLocaleString("en-US", {style: "currency", currency: "USD"}));
 //DEDUCCIONES TOTAL
     var total_deducciones_2 = total_maquila_gastos_2 + 
