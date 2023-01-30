@@ -19,12 +19,12 @@
 /////////////////////////////////////////////////////////////////
 //
 
-  if (window.location.href == "http://poliprom.pe/calculadoras/balance_met_cu+au+ag.html") {
-  balance();
-} else {
-  window.alert("ERROR 404. INTERNET CONNECTION WITH ´http://poliprom.pe´ IS LOST. PLEASE, CHECK YOUR INTERNET CONNECTION.");
-  window.close();
-}
+//   if (window.location.href == "http://poliprom.pe/calculadoras/balance_met_cu+au+ag.html") {
+//   balance();
+// } else {
+//   window.alert("ERROR 404. INTERNET CONNECTION WITH ´http://poliprom.pe´ IS LOST. PLEASE, CHECK YOUR INTERNET CONNECTION.");
+//   window.close();
+// }
   
 /////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
