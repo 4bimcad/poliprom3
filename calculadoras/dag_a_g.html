@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <meta name="description" content="dag a g convertir online">
+  <meta name="keywords" content="dag a g convertidor pnline, dag a g">
+  <meta name="author" content="Autores: Stanislav Tsvitkov, Vadym Grechuk.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="copyright" content="POLIPROM SAC" />
+	<title>dag a g Convertir Online</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+        font-size: 1.5rem;
+    }
+    .container {
+        max-width: 500px;
+        margin-top: 50px;
+    }
+    input[type="number"] {
+        font-size: 2rem;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+    }
+</style>
+
+</head>
+<body>
+<!-- 
+//ES
+// PROPIEDAD INTELECTUAL DE POLIPROM SAC
+// COPIAR O USAR PARTE DE CODICO SIN PERMISO DE ADMINISTRACION DE POLIPROM SAC PROHIBIDO!!!!
+// TODOS DERECHOS RESERVADOS
+
+//EN
+// INTELLECTUAL PROPERTY OF POLIPROM SAC
+// COPY OR USE PART OF CODE WITHOUT PERMISSION OF ADMINISTRATION OF POLIPROM SAC PROHIBITED !!!!
+// ALL RIGHTS RESERVED 
+-->  
+
+    <div class="container text-center">
+        <h1>"dag" a "g" Convertir online</h1>
+        <div class="mb-3">
+            <label for="dagInput" class="form-label">Decagramos (dag)</label>
+            <input type="number" id="dagInput" class="form-control" placeholder="Ingrese dag" oninput="convertDagToG()" min="0">
+        </div>
+        <div class="mb-3">
+            <label for="gInput" class="form-label">Gramos (g)</label>
+            <input type="number" id="gInput" class="form-control" placeholder="Ingrese g" oninput="convertGToDag()" min="0">
+        </div>
+    </div>
+
+
+
+
+      <div class="card">
+        <div class="card-body">
+         
+          <h1 class="text-center mb-5">Descripción de Unidades de Masa</h1>
+      
+          <h3><b>Decagramo (dag)</b></h3>
+          <p>
+              El <strong>decagramo (dag)</strong> es una unidad de masa en el sistema métrico, igual a 10 gramos. Su prefijo "deca-" indica un factor de diez. Aunque no es tan común como el gramo o el kilogramo, se utiliza en algunas situaciones específicas, principalmente en ciencias y campos que requieren mediciones precisas pero en cantidades moderadas.
+          </p>
+          
+          <h3><b>Gramo (g)</b></h3>
+          <p>
+              El <strong>gramo (g)</strong> es una unidad de masa en el sistema métrico que es igual a la milésima parte de un kilogramo (1 g = 0,001 kg). Es una de las unidades más comunes para medir pequeñas cantidades de masa y se utiliza ampliamente en la cocina, la ciencia, y la vida cotidiana para medir alimentos, ingredientes, sustancias químicas, etc. El gramo es una de las unidades base del sistema métrico.
+          </p>
+    
+          <h2>Resumen</h2>
+          <p>
+              En el contexto de conversión entre unidades de masa, como decagramos (dag) y gramos (g), es importante entender que:
+          </p>
+          <ul>
+              <li><strong>1 decagramo (dag) = 10 gramos (g)</strong></li>
+              <li><strong>1 gramo (g) = 0,1 decagramos (dag)</strong></li>
+          </ul>
+          <p>
+              Estas unidades se utilizan para medir masas de diferentes magnitudes, y la conversión entre ellas es directa y simple debido a la estructura decimal del sistema métrico.
+          </p>
+
+
+        </div>
+      </div>
+
+     
+    
+    <footer>
+        Poliprom S.A.C. Todos los derechos reservados
+    </footer>
+
+    <script>
+        function convertDagToG() {
+            const dagInput = document.getElementById('dagInput');
+            const gInput = document.getElementById('gInput');
+            gInput.value = (dagInput.value !== '') ? (parseFloat(dagInput.value) * 10).toFixed(2) : 0;
+        }
+
+        function convertGToDag() {
+            const dagInput = document.getElementById('dagInput');
+            const gInput = document.getElementById('gInput');
+            dagInput.value = (gInput.value !== '') ? (parseFloat(gInput.value) / 10).toFixed(2) : 0;
+        }
+    </script>
+
+</body>
+</html>
